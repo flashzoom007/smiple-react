@@ -1,0 +1,31 @@
+$bg-color: rgb(13,110,253);
+$bg-white: #fff;
+$bg-fill-white: #f7f7f7;
+$bg-dark: #000;
+
+@mixin icon_poition($pad, $mar) {
+  right: 0;
+  position: absolute;
+  padding: $pad;
+  margin: $mar;
+  background-color: $bg-color;
+  color: $bg-white;
+  border-radius: 50%;
+  z-index: 1;
+}
+@mixin hover_icon { box-shadow: 0 0 8px 6px rgba(13, 110, 253, 50%); transition-duration: 0.5s; }
+
+*{ box-sizing: border-box; padding: 0; margin: 0; }
+body, .bg-color { background: rgb(13 110 253 / 7%) !important; }
+
+.fontSize_icon { font-size: 26px; color:$bg-color; cursor: pointer; }
+div#root {position: relative; .icon_position { @include icon_poition(1rem, 1rem); svg.fontSize_icon{ color: $bg-white!important; } bottom: 0; &:hover { @include hover_icon(); } } }
+.sidebar_menu { height: auto; padding: 20px; }
+.pl-1 { padding-left: 1rem; }
+.transition-duration { transition-duration: 1s; }
+.transition_duration_ms { transition-duration: 0.5s; }
+.sidebar_menu span {svg {color: $bg-color; border: 1px solid $bg-color; border-radius: 50%; padding: 5px; font-size: 26px; }}
+.main_sidebar { background-color: $bg-white; }
+.box-shadow { &:hover { box-shadow: 0 8px 8px 2px rgb(13,110,253,0.5); transition-duration: 0.5s; }}
+.main_section { position: relative; .inner_section .position_menu { position: absolute; left: 0px; top: -76px; }}
+@media (max-width: 768px) { .mobile_res {text-align: end;} }
